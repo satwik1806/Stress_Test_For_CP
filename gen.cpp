@@ -55,6 +55,16 @@ void print_edges(vector<pair<int,int>> edges, int n, bool weight){
     }
 }
 
+void print_edges(vector<pair<int,int>> edges, int n, int m, bool weight){
+    // printing tree;
+    cout << n << " " << m <<endl;
+    for(auto [p,q]: edges){
+        cout << p + 1 << " " << q + 1;
+        if(weight) cout << " " << randint(1,100);
+        cout << endl;
+    }
+}
+
 #define all(a) a.begin(),a.end()
 vector<pair<int,int>> gen_tree(int n, bool weight){
     vector<int> par(n);
@@ -100,8 +110,8 @@ int main(int argc, char* argv[]){
     srand(atoi(argv[1]));
 
     int n = randint(1,20);
-    vector<pair<int,int>> edges = gen_tree(n,0);
-    print_edges(edges,n,0);
+    vector<pair<int,int>> edges = gen_graph(n,n + 10,0);
+    print_edges(edges,n, n + 10,0);
 
     return 0;
 }
