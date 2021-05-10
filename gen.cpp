@@ -71,7 +71,7 @@ vector<pair<int,int>> gen_tree(int n, bool weight){
     // make a tree with 0 as root.
     for(int i=1;i<n;i++) par[i] = randint(0,i-1);
 
-    // not to create a diff tree. just rename the vertices.
+    // now to create a diff tree. just rename the vertices.
     vector<int> rename(n); for(int i=0;i<n;i++) rename[i] = i;
     random_shuffle(all(rename));
 
